@@ -1,4 +1,17 @@
-/* ===== Base Styles ===== */
+/* ================================
+   Global Styles
+================================ */
+:root {
+  --bg-light: #F0FDF4;       /* light mint green background */
+  --primary: #065F46;        /* deep teal green */
+  --accent: #0EA5E9;         /* sky blue */
+  --success: #16A34A;        /* vibrant green */
+  --danger: #DC2626;         /* red for alerts */
+  --text-dark: #1F2937;      /* near-black for text */
+  --text-light: #6B7280;     /* muted gray for subtext */
+  --white: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,16 +19,21 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #F9FAFB;
-  color: #374151;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===== Header & Nav ===== */
+/* ================================
+   Header / Navbar
+================================ */
 header {
-  background-color: #1E3A8A;
-  color: #fff;
+  background-color: var(--primary);
+  color: var(--white);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -23,163 +41,180 @@ header {
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 nav a {
-  color: #fff;
-  margin-left: 1rem;
+  color: var(--white);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
+  margin-left: 1.5rem;
+  transition: color 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
-  color: #F97316;
+nav a:hover {
+  color: var(--accent);
 }
 
-/* ===== Main Layout ===== */
+/* ================================
+   Main Layout
+================================ */
 main {
+  flex: 1;
   padding: 2rem;
-  max-width: 1000px;
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-section {
-  background-color: #fff;
+/* ================================
+   Cards / Panels
+================================ */
+.card {
+  background: var(--white);
   border-radius: 8px;
-  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-h2 {
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  font-size: 1.25rem;
   margin-bottom: 1rem;
-  font-size: 1.4rem;
-  color: #1E3A8A;
+  color: var(--primary);
 }
 
-/* ===== Forms ===== */
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 500;
+/* ================================
+   Buttons
+================================ */
+button, .btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-form input,
-form select {
-  width: 100%;
+button:hover, .btn:hover {
+  background-color: var(--accent);
+  transform: scale(1.03);
+}
+
+.btn-success {
+  background-color: var(--success);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* ================================
+   Forms
+================================ */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, select, textarea {
   padding: 0.6rem;
-  margin-top: 0.5rem;
   border: 1px solid #d1d5db;
   border-radius: 6px;
   font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
 }
 
-form input:focus,
-form select:focus {
+input:focus, select:focus, textarea:focus {
   outline: none;
-  border-color: #1E3A8A;
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(14,165,233,0.2);
 }
 
-button {
-  background-color: #F97316;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
-}
-
-button:hover {
-  background-color: #ea580c;
-}
-
-button:active {
-  transform: scale(0.98);
-}
-
-/* ===== Dashboard Table ===== */
+/* ================================
+   Tables
+================================ */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
 }
 
-table th {
-  background-color: #1E3A8A;
-  color: #fff;
-  padding: 12px;
+table th, table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
   text-align: left;
 }
 
-table td {
-  padding: 12px;
-  border-bottom: 1px solid #e5e7eb;
+table th {
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 table tr:nth-child(even) {
-  background-color: #f3f4f6;
+  background-color: #f9fafb;
 }
 
-/* ===== Status & Action Buttons ===== */
 .status-success {
-  color: #16A34A;
-  font-weight: 600;
+  color: var(--success);
+  font-weight: bold;
 }
 
 .status-danger {
-  color: #DC2626;
-  font-weight: 600;
+  color: var(--danger);
+  font-weight: bold;
 }
 
-.action-btn {
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  margin-right: 0.3rem;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.2s;
-}
-
-.action-view {
-  background-color: #1E3A8A;
-  color: #fff;
-}
-
-.action-edit {
-  background-color: #16A34A;
-  color: #fff;
-}
-
-.action-delete {
-  background-color: #DC2626;
-  color: #fff;
-}
-
-.action-view:hover { background-color: #3749A3; }
-.action-edit:hover { background-color: #15803D; }
-.action-delete:hover { background-color: #B91C1C; }
-
-/* ===== Footer ===== */
+/* ================================
+   Footer
+================================ */
 footer {
+  background-color: var(--primary);
+  color: var(--white);
   text-align: center;
   padding: 1rem;
-  background-color: #f3f4f6;
-  color: #6b7280;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
 }
-footer a {
-  color: #1E3A8A;
-  text-decoration: none;
-  font-weight: 500;
+
+/* ================================
+   Responsive Design
+================================ */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+
+  nav a {
+    margin: 0 0.75rem 0.75rem 0;
+    display: inline-block;
+  }
+
+  main {
+    padding: 1rem;
+  }
 }
