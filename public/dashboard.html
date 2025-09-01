@@ -1,56 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | Maternal Health Reminder</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Maternal Health Reminder System</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Maternal Health Reminder</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="dashboard.html" class="active">Dashboard</a></li>
-      <li><a href="register.html">Register</a></li>
-    </ul>
-  </nav>
+  <!-- Header -->
+  <header>
+    <h1>Maternal Health Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#">Reports</a>
+      <a href="#">Settings</a>
+    </nav>
+  </header>
 
-  <!-- Main content -->
+  <!-- Main -->
   <main class="container">
-    <h1 class="page-title">Patient Dashboard</h1>
+    <!-- Welcome / Summary -->
+    <section class="card">
+      <h2>Welcome, Health Worker</h2>
+      <p>Here’s an overview of patient reminders and status updates.</p>
+    </section>
 
-    <!-- Table view (desktop) -->
-    <div class="table-container">
-      <table class="patient-table">
+    <!-- Patient Stats -->
+    <section class="card">
+      <h2>Quick Stats</h2>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <div class="card" style="flex: 1; min-width: 200px; background: #ecfdf5;">
+          <h3>Total Patients</h3>
+          <p><strong>124</strong></p>
+        </div>
+        <div class="card" style="flex: 1; min-width: 200px; background: #eff6ff;">
+          <h3>Upcoming Appointments</h3>
+          <p><strong>18</strong></p>
+        </div>
+        <div class="card" style="flex: 1; min-width: 200px; background: #fef2f2;">
+          <h3>Missed Visits</h3>
+          <p><strong>5</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patient Table -->
+    <section class="card">
+      <h2>Patient Reminders</h2>
+      <table>
         <thead>
           <tr>
             <th>Name</th>
-            <th>Phone</th>
-            <th>LMP</th>
-            <th>Health Worker</th>
-            <th>Facility</th>
-            <th>Registered</th>
-            <th>Actions</th>
+            <th>Next Appointment</th>
+            <th>Status</th>
+            <th>Action</th>
           </tr>
         </thead>
-        <tbody id="patient-list">
-          <!-- Patients will be injected here dynamically from script.js -->
+        <tbody>
+          <tr>
+            <td>Mary Atieno</td>
+            <td>2025-09-05</td>
+            <td class="status-success">Confirmed</td>
+            <td><button class="btn btn-danger">Cancel</button></td>
+          </tr>
+          <tr>
+            <td>Jane Wanjiku</td>
+            <td>2025-09-08</td>
+            <td class="status-danger">Missed</td>
+            <td><button class="btn btn-success">Reschedule</button></td>
+          </tr>
+          <tr>
+            <td>Akinyi Omollo</td>
+            <td>2025-09-10</td>
+            <td class="status-success">Confirmed</td>
+            <td><button class="btn btn-danger">Cancel</button></td>
+          </tr>
         </tbody>
       </table>
-    </div>
+    </section>
 
-    <!-- Card view (mobile fallback) -->
-    <div class="card-container" id="patient-cards">
-      <!-- Patients will be injected here dynamically from script.js -->
-    </div>
+    <!-- Reminder Form -->
+    <section class="card">
+      <h2>Send Reminder</h2>
+      <form>
+        <label for="patient">Patient Name</label>
+        <input type="text" id="patient" name="patient" placeholder="Enter patient name" required />
+
+        <label for="date">Appointment Date</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="3" placeholder="Type reminder message..."></textarea>
+
+        <button type="submit" class="btn btn-success">Send Reminder</button>
+      </form>
+    </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Maternal Health Reminder. All rights reserved.</p>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Maternal Health Reminder System. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
