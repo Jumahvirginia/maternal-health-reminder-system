@@ -1,85 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maternal Health Reminder System</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maternal Health Reminder System</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navbar -->
+  <header class="navbar">
     <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>🤱 Maternal Health Reminder System</h1>
-            <p>Helping health workers keep expectant mothers healthy</p>
-        </header>
-
-        <!-- Navigation -->
-        <nav>
-            <button id="registerTab" class="nav-btn active">Register Patient</button>
-            <button id="dashboardTab" class="nav-btn">View Patients</button>
-        </nav>
-
-        <!-- Register Patient Section -->
-        <section id="registerSection" class="section active">
-            <h2>Register New Patient</h2>
-            <form id="patientForm">
-                <div class="form-group">
-                    <label for="patientName">Full Name:</label>
-                    <input type="text" id="patientName" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phoneNumber">Phone Number:</label>
-                    <input type="tel" id="phoneNumber" placeholder="+254712345678" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="lastMenstrualPeriod">Last Menstrual Period (LMP):</label>
-                    <input type="date" id="lastMenstrualPeriod" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="healthWorker">Health Worker Name:</label>
-                    <input type="text" id="healthWorker" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="healthFacility">Health Facility:</label>
-                    <input type="text" id="healthFacility" required>
-                </div>
-
-                <button type="submit">Register Patient</button>
-            </form>
-
-            <!-- Pregnancy Info Display -->
-            <div id="pregnancyInfo" class="info-box" style="display: none;">
-                <h3>Pregnancy Information</h3>
-                <p><strong>Estimated Due Date:</strong> <span id="dueDate"></span></p>
-                <p><strong>Current Week:</strong> <span id="currentWeek"></span></p>
-                <p><strong>Trimester:</strong> <span id="trimester"></span></p>
-            </div>
-        </section>
-
-        <!-- Dashboard Section -->
-        <section id="dashboardSection" class="section">
-            <h2>Registered Patients</h2>
-            <div id="patientsContainer">
-                <p>No patients registered yet.</p>
-            </div>
-        </section>
-
-        <!-- Success Message -->
-        <div id="successMessage" class="message success" style="display: none;">
-            Patient registered successfully! Reminders have been scheduled.
-        </div>
-
-        <!-- Error Message -->
-        <div id="errorMessage" class="message error" style="display: none;">
-            Please fill in all required fields.
-        </div>
+      <h1 class="logo">Maternal Health</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="register.html">Register Patient</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h2 class="hero-title">Welcome to the Maternal Health Reminder System</h2>
+      <p class="hero-subtitle">
+        Supporting mothers and healthcare workers with timely reminders for prenatal visits and care.
+      </p>
+      <a href="register.html" class="btn-primary">Register a Patient</a>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="info-section">
+    <div class="container grid-2">
+      <div>
+        <h3>Why This Matters</h3>
+        <p>
+          Timely reminders help expectant mothers attend critical appointments, ensuring healthier outcomes
+          for both mother and child.
+        </p>
+      </div>
+      <div>
+        <h3>What You Can Do</h3>
+        <p>
+          Register patients, track visits, and send reminders with ease through this system.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Maternal Health Reminder System. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
