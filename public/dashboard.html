@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Maternal Health Reminder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Maternal Health Reminder</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main content -->
+  <main class="container">
+    <h1 class="page-title">Patient Dashboard</h1>
+
+    <!-- Table view (desktop) -->
+    <div class="table-container">
+      <table class="patient-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>LMP</th>
+            <th>Health Worker</th>
+            <th>Facility</th>
+            <th>Registered</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="patient-list">
+          <!-- Patients will be injected here dynamically from script.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Card view (mobile fallback) -->
+    <div class="card-container" id="patient-cards">
+      <!-- Patients will be injected here dynamically from script.js -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Maternal Health Reminder. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
