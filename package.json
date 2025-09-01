@@ -1,0 +1,36 @@
+{
+  "name": "maternal-health-reminder-system",
+  "version": "1.0.0",
+  "description": "A web app to help health workers send automated reminders to pregnant women for prenatal care",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "maternal-health",
+    "healthcare",
+    "reminders",
+    "africa",
+    "prenatal-care",
+    "hackathon",
+    "sdg3"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/maternal-health-reminder-system.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
