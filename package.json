@@ -20,17 +20,21 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/maternal-health-reminder-system.git"
+    "url": "git+https://github.com/your-username/maternal-health-reminder-system.git"
   },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/maternal-health-reminder-system/issues"
+  },
+  "homepage": "https://github.com/your-username/maternal-health-reminder-system#readme"
 }
