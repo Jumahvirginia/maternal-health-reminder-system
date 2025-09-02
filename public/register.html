@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register Patient</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Register New Patient</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="patients.html">Patients</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <form id="patientForm">
+        <label for="patientName">Patient Name</label>
+        <input type="text" id="patientName" placeholder="Enter full name" required />
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" id="phoneNumber" placeholder="+254712345678" required />
+
+        <label for="lastMenstrualPeriod">Last Menstrual Period</label>
+        <input type="date" id="lastMenstrualPeriod" required />
+
+        <label for="healthWorker">Health Worker</label>
+        <input type="text" id="healthWorker" placeholder="Enter health worker's name" required />
+
+        <label for="healthFacility">Facility</label>
+        <input type="text" id="healthFacility" placeholder="Enter facility name" required />
+
+        <button type="submit" class="btn btn-success">Register Patient</button>
+      </form>
+
+      <div id="pregnancyInfo" style="display:none; margin-top:1rem;">
+        <p><strong>Due Date:</strong> <span id="dueDate"></span></p>
+        <p><strong>Current Week:</strong> <span id="currentWeek"></span></p>
+        <p><strong>Trimester:</strong> <span id="trimester"></span></p>
+      </div>
+
+      <p id="successMessage" style="display:none; color: var(--success); font-weight:bold; margin-top:0.5rem;"></p>
+      <p id="errorMessage" style="display:none; color: var(--danger); font-weight:bold; margin-top:0.5rem;"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Maternal Health Reminder System. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
